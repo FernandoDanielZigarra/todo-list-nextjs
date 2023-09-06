@@ -15,7 +15,7 @@ const getTasks = async () => {
 };
 
 async function TaskList() {
-  const { tasks } = await getTasks();
+  const { tasks } = await getTasks() || { tasks: [] };
 
   return (
     <>
