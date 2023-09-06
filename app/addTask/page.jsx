@@ -25,6 +25,7 @@ function AddTopic() {
         },
       });
       if (response.ok) {
+        router.refresh("/");
         router.push("/");
       } else {
         throw new Error("Failed to create task");
@@ -48,7 +49,7 @@ function AddTopic() {
         placeholder="Task Description"
         className="border border-slate-500 px-8 py-2"
       />
-      <button className="bg-green-600 px-8 py-2 text-white font-bold w-fit">
+      <button type="submit" className="bg-green-600 px-8 py-2 text-white font-bold w-fit">
         Add Task
       </button>
     </form>

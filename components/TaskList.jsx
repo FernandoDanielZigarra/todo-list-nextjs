@@ -16,7 +16,7 @@ const getTasks = async () => {
 
 async function TaskList() {
   const { tasks } = await getTasks() || { tasks: [] };
-
+  
   return (
     <>
       {tasks.map((task) => (
