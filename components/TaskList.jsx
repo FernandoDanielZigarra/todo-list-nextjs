@@ -6,6 +6,10 @@ const getTasks = async () => {
   try {
     const response = await fetch("http://localhost:3000/api/tasks", {
       cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      }
+
     });
     if (!response.ok) throw new Error("Failed to fetch tasks");
     return response.json();
@@ -16,7 +20,7 @@ const getTasks = async () => {
 
 async function TaskList() {
   const { tasks } = await getTasks()
-  
+
   return (
     <>
       {tasks.map((task) => (
