@@ -14,14 +14,13 @@ const getTasks = async () => {
   }
 };
 
-
 async function TaskList() {
   const { tasks } = await getTasks();
 
   return (
     <>
       {tasks.map((task) => (
-        <article className="p-4 border border-slate-300 my-3 flex justify-between gap-5">
+        <article key={task._id} className="p-4 border border-slate-300 my-3 flex justify-between gap-5">
           <div>
             <h2 className="font-bold text-2xl">{task.title}</h2>
             <div>{task.description}</div>
